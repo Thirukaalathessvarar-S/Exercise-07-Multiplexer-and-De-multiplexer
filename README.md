@@ -52,37 +52,61 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
-
-
+Developed by: Thirukaalathessvarar S
+RegisterNumber:212222230161
+```
+### Multiplexer
+```
+module mul (s0,s1,a0,a1,a2,a3,y);
+input a0,a1,a2,a3,s0,s1;
+output y;
+wire a,b,c,d,s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (a,s0,s1,a3);
+and (b,s0bar,s1,a2);
+and (c,s0,s1bar,a1);
+and (d,s0bar,s1bar,a0);
+or (y,a,b,c,d);
+endmodule
+```
+### De-multiplexer
+```
+module de (i,s0,s1,y0,y1,y2,y3);
+input s0,s1,i;
+output y0,y1,y2,y3;
+wire s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (y3,i,s1,s0);
+and (y2,i,s1,s0bar);
+and (y1,i,s1bar,s0);
+and (y0,i,s1bar,s0bar);
+endmodule
+```
 
 ### RTL LOGIC  
+### Multiplexer
+![image](https://github.com/Thirukaalathessvarar-S/Exercise-07-Multiplexer-and-De-multiplexer/assets/121166390/43406f87-a376-47e0-ad88-95f1f28eed83)
 
-
-
-
-
-
-
+### De-Multiplexer
+![image](https://github.com/Thirukaalathessvarar-S/Exercise-07-Multiplexer-and-De-multiplexer/assets/121166390/d108f836-9107-4400-8a58-d4c0065828fd)
 
 ### TIMING DIGRAMS  
+### Multiplexer
+![image](https://github.com/Thirukaalathessvarar-S/Exercise-07-Multiplexer-and-De-multiplexer/assets/121166390/cdc9f971-3d4d-4f7f-9bd8-f2451547f946)
 
-
-
-
+### De-Multiplexer
+![image](https://github.com/Thirukaalathessvarar-S/Exercise-07-Multiplexer-and-De-multiplexer/assets/121166390/231b07a7-535c-451c-b199-46e0e68438ec)
 
 ### TRUTH TABLE 
+### Multiplexer
+![image](https://github.com/Thirukaalathessvarar-S/Exercise-07-Multiplexer-and-De-multiplexer/assets/121166390/84a3b943-5d8e-4f09-95f6-3f5304a6bab9)
 
-
-
-
-
+### De-Multiplexer
+![image](https://github.com/Thirukaalathessvarar-S/Exercise-07-Multiplexer-and-De-multiplexer/assets/121166390/cae46280-d82f-4e2e-83b4-3b9d0b507249)
 
 ### RESULTS 
+Thus, the program to design multiplexer and de-multiplexer is successfully completed.
